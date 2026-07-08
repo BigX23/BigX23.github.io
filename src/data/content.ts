@@ -1,24 +1,8 @@
-export interface NavLink {
-  href: string;
-  label: string;
-}
-
-export interface Skill {
-  name: string;
-  level: number; // 0-100
-}
-
 export interface Project {
   title: string;
-  summary: string;
-  stack: string[];
   year: string;
-}
-
-export interface FamilyMoment {
-  title: string;
-  description: string;
-  emoji: string;
+  story: string;
+  stack: string[];
 }
 
 export interface BlogPost {
@@ -33,72 +17,61 @@ export interface BlogPost {
 export const profile = {
   name: 'Matthew White',
   role: 'Systems Engineer',
-  tagline: 'I design resilient, observable infrastructure that scales quietly.',
-  location: 'Seattle, WA',
+  location: 'Seattle, Washington',
   email: 'whitemat@gmail.com',
-  intro:
-    "I'm a systems engineer who loves the unglamorous work that keeps platforms fast and dependable — distributed systems, automation, and the kind of observability that lets a team sleep at night. Away from the terminal, I'm a husband and dad who's happiest outdoors with my family.",
+  salutation: 'Hello —',
 } as const;
 
-export const navLinks: NavLink[] = [
-  { href: '#about', label: 'About' },
-  { href: '#work', label: 'Work' },
-  { href: '#family', label: 'Family' },
-  { href: '#blog', label: 'Blog' },
+export const letterOpening: string[] = [
+  'I’m Matt. I’m a systems engineer in Seattle, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
+  'By day that means distributed systems, automation, and observability: the quiet disciplines that let a team ship quickly and still sleep through the night. By evening it means a house full of kids, a kitchen that smells like Sunday pancakes, and a pair of hiking boots by the door.',
+  'This page is a letter, not a billboard. No dashboards, no sign-up buttons — just the work I care about, the people I love, and a few things I’ve written down along the way.',
 ];
 
-export const skills: Skill[] = [
-  { name: 'Distributed Systems', level: 92 },
-  { name: 'Kubernetes & Containers', level: 88 },
-  { name: 'Infrastructure as Code', level: 85 },
-  { name: 'Observability & SRE', level: 90 },
-  { name: 'Go & Python', level: 82 },
+export const craft: string[] = [
+  'I gravitate toward the unglamorous middle of the stack — the part between “the code compiled” and “the customer noticed nothing.” Good infrastructure, to me, is less about clever architecture and more about honest failure modes: systems that degrade politely, tell you what’s wrong in plain language, and recover without ceremony.',
+  'The tools I reach for most, in roughly the order I trust them: distributed systems design, Kubernetes and containers, infrastructure as code, observability and SRE practice, and Go or Python when it’s time to write things down.',
+];
+
+export const skills: string[] = [
+  'Distributed systems',
+  'Kubernetes & containers',
+  'Infrastructure as code',
+  'Observability & SRE',
+  'Go & Python',
 ];
 
 export const projects: Project[] = [
   {
     title: 'Zero-Downtime Migration Platform',
-    summary:
-      'Led a phased migration of a monolith to a service mesh, cutting deploy risk and enabling blue-green rollouts across 40+ services.',
-    stack: ['Kubernetes', 'Istio', 'Terraform', 'Go'],
     year: '2025',
+    story:
+      'We moved a long-lived monolith onto a service mesh without ever turning the lights off — phased cutovers, blue-green rollouts, and a great deal of patient rehearsal before each step.',
+    stack: ['Kubernetes', 'Istio', 'Terraform', 'Go'],
   },
   {
     title: 'Fleet Observability Pipeline',
-    summary:
-      'Built a metrics and tracing pipeline ingesting billions of spans daily, reducing mean-time-to-detect from hours to minutes.',
-    stack: ['OpenTelemetry', 'Prometheus', 'Grafana', 'Python'],
     year: '2024',
+    story:
+      'A metrics-and-tracing pipeline that turned “something feels slow” into an answerable question, and detection from a war-room ritual into a routine glance.',
+    stack: ['OpenTelemetry', 'Prometheus', 'Grafana', 'Python'],
   },
   {
     title: 'Self-Healing Autoscaler',
-    summary:
-      'Designed a predictive autoscaler that anticipates load from seasonal signals, trimming cloud spend by 28% without SLO regressions.',
-    stack: ['Go', 'KEDA', 'AWS', 'Machine Learning'],
     year: '2023',
+    story:
+      'An autoscaler that learns the shape of seasonal load and gets ahead of it, so capacity arrives before the traffic does — kinder to the pager and to the cloud bill alike.',
+    stack: ['Go', 'KEDA', 'AWS'],
   },
 ];
 
-export const familyMoments: FamilyMoment[] = [
-  {
-    title: 'Weekend Trail Crew',
-    description:
-      'Most Saturdays you will find us on a Cascades trail, kids setting the pace and picking the snack breaks.',
-    emoji: '🥾',
-  },
-  {
-    title: 'Kitchen Experiments',
-    description:
-      'Sunday mornings are for pancakes with whatever the kids decide belongs in the batter that week.',
-    emoji: '🥞',
-  },
-  {
-    title: 'Backyard Astronomers',
-    description:
-      'A small telescope and a lot of patience — we chase clear nights to spot planets and the occasional meteor shower.',
-    emoji: '🔭',
-  },
+export const familyProse: string[] = [
+  'The systems I care about most run on love, not uptime. Most Saturdays you’ll find us on a Cascades trail, the kids setting the pace and choosing the snack breaks. Sunday mornings are for pancakes with whatever the crew decides belongs in the batter that week — results vary, enthusiasm doesn’t.',
+  'On clear nights we haul a small telescope into the backyard and practice patience together, chasing planets and the occasional meteor shower. It’s the slowest feedback loop I run, and my favorite one.',
 ];
+
+export const blogIntro =
+  'Some things I’ve written lately, if you’d like to read further:';
 
 export const blogPosts: BlogPost[] = [
   {
@@ -129,3 +102,9 @@ export const blogPosts: BlogPost[] = [
     tags: ['IaC', 'Terraform'],
   },
 ];
+
+export const signoff = {
+  closing: 'Yours, from the trailhead,',
+  name: 'Matt',
+  postscript: 'p.s. — the inbox is always open:',
+} as const;

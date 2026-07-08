@@ -1,30 +1,31 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Hero } from './Hero';
-import { profile } from '../data/content';
+import { letterOpening, profile } from '../data/content';
 
 describe('Hero', () => {
-  it('renders the name in the heading', () => {
+  it('opens with the salutation as the page heading', () => {
     render(<Hero />);
     expect(
-      screen.getByRole('heading', { name: new RegExp(profile.name) }),
+      screen.getByRole('heading', { level: 1, name: profile.salutation }),
     ).toBeInTheDocument();
   });
 
-  it('renders the tagline', () => {
+  it('renders the dateline with the location', () => {
     render(<Hero />);
-    expect(screen.getByText(profile.tagline)).toBeInTheDocument();
+    expect(screen.getByText(`From ${profile.location}`)).toBeInTheDocument();
   });
 
-  it('links the contact button to the profile email', () => {
+  it('renders every opening paragraph', () => {
     render(<Hero />);
-    const contact = screen.getByRole('link', { name: /get in touch/i });
-    expect(contact).toHaveAttribute('href', `mailto:${profile.email}`);
+    letterOpening.forEach((paragraph) => {
+      expect(screen.getByText(paragraph)).toBeInTheDocument();
+    });
   });
 
-  it('links the primary CTA to the work section', () => {
+  it('keeps the fold free of buttons and links — it is a letter', () => {
     render(<Hero />);
-    const cta = screen.getByRole('link', { name: /see my work/i });
-    expect(cta).toHaveAttribute('href', '#work');
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
   });
 });

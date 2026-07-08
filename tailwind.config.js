@@ -4,24 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0b1120',
-        accent: {
-          DEFAULT: '#6366f1',
-          soft: '#a5b4fc',
-        },
+        paper: 'var(--color-paper)',
+        'paper-2': 'var(--color-paper-2)',
+        rule: 'var(--color-rule)',
+        neutral: 'var(--color-neutral)',
+        muted: 'var(--color-muted)',
+        ink: 'var(--color-ink)',
+        accent: 'var(--color-accent)',
+        focus: 'var(--color-focus)',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
-      },
-      keyframes: {
-        'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-      },
-      animation: {
-        'fade-up': 'fade-up 0.6s ease-out both',
+        display: ['var(--font-display)'],
+        body: ['var(--font-body)'],
       },
     },
   },

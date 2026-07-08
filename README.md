@@ -7,12 +7,13 @@ single-page React application with a focus on resilient, well-tested code.
 
 ## ✨ Features
 
-- **Modern, responsive design** — a dark, glassmorphic aesthetic built with Tailwind CSS,
-  custom display typography, and subtle motion.
-- **Four content sections** — an about summary with a skills breakdown, selected
-  systems-engineering projects, family life, and a blog feed.
-- **Fully accessible navigation** — sticky header with a keyboard- and screen-reader-friendly
-  mobile menu.
+- **Editorial "letter" design** — the page reads as a personal letter: warm paper palette,
+  Fraunces + Newsreader typography, a single narrow prose column, and no marketing chrome.
+  Designed with the [Hallmark](https://skills.sh/nutlope/hallmark) anti-AI-slop design skill.
+- **Four content sections** — what I do (with a plain-spoken skills list), selected
+  systems-engineering work told as prose, family life, and a reading list of blog posts.
+- **Quiet, accessible chrome** — minimal edge-aligned header, letter-close footer, instant
+  focus rings, and honest copy with no invented metrics.
 - **100% unit test coverage** — every component, utility, and the app entry point is tested.
 
 ## 🛠 Tech Stack
@@ -21,7 +22,7 @@ single-page React application with a focus on resilient, well-tested code.
 | ---------- | -------------------------------------- |
 | Framework  | React 19 + TypeScript                  |
 | Build tool | Vite                                   |
-| Styling    | Tailwind CSS                           |
+| Styling    | Tailwind CSS + OKLCH design tokens     |
 | Testing    | Vitest + React Testing Library         |
 | Coverage   | `@vitest/coverage-v8` (100% threshold) |
 

@@ -10,7 +10,7 @@ export function App() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen bg-ink">
+    <div className="min-h-screen bg-paper text-ink">
       <Navbar />
       <main>
         <Hero />

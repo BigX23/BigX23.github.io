@@ -4,20 +4,21 @@ import { Work } from './Work';
 import { projects } from '../data/content';
 
 describe('Work', () => {
-  it('renders each project title and year', () => {
+  it('renders each project title, year, and story', () => {
     render(<Work />);
     projects.forEach((project) => {
       expect(screen.getByText(project.title)).toBeInTheDocument();
-      expect(screen.getAllByText(project.year).length).toBeGreaterThan(0);
+      expect(screen.getByText(project.year)).toBeInTheDocument();
+      expect(screen.getByText(project.story)).toBeInTheDocument();
     });
   });
 
-  it('renders every technology in each stack', () => {
+  it('renders the stack as a prose line, not chips', () => {
     render(<Work />);
     projects.forEach((project) => {
-      project.stack.forEach((tech) => {
-        expect(screen.getAllByText(tech).length).toBeGreaterThan(0);
-      });
+      expect(
+        screen.getByText(`Built with ${project.stack.join(', ')}.`),
+      ).toBeInTheDocument();
     });
   });
 });

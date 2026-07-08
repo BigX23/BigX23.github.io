@@ -1,26 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+/* Hallmark · genre: editorial · macrostructure: Letter · H5 knobs: salutation=greeting, body=3para, signoff=typed ·
+   nav: N9 (wordmark serif, cta text+arrow, spacious) · footer: Ft6 (signoff roman, ps=yes, 60ch) ·
+   pre-emit critique: P4 H4 E4 S4 R5 V5 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) ·
+   chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Warm-paper palette · anchor hue 80 (oat), accent hue 155 (fir green) */
+    --color-paper: oklch(96% 0.012 80);
+    --color-paper-2: oklch(93% 0.014 80);
+    --color-rule: oklch(82% 0.01 80);
+    --color-neutral: oklch(52% 0.01 80);
+    --color-muted: oklch(42% 0.012 75);
+    --color-ink: oklch(22% 0.012 60);
+    --color-accent: oklch(42% 0.11 155);
+    --color-focus: oklch(52% 0.13 155);
+
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
+    --font-body: 'Newsreader', ui-serif, Georgia, serif;
+  }
+
   html {
+    overflow-x: clip;
     scroll-behavior: smooth;
   }
+
   body {
-    @apply bg-ink text-slate-200 font-sans antialiased;
+    overflow-x: clip;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-style: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  /* Focus rings appear instantly — never transitioned. */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
   }
 }
 
 @layer components {
-  .container-page {
-    @apply mx-auto w-full max-w-5xl px-6;
+  .measure {
+    @apply mx-auto w-full max-w-[60ch] px-6;
   }
-  .section-heading {
-    @apply font-display text-3xl font-bold text-white sm:text-4xl;
+
+  .letter-link {
+    color: var(--color-accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: text-decoration-thickness 120ms ease-out;
   }
-  .card {
-    @apply rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-accent-soft/40 hover:bg-white/[0.07];
+  .letter-link:hover {
+    text-decoration-thickness: 2px;
+  }
+  .letter-link:active {
+    color: var(--color-focus);
+  }
+
+  .small-caps-head {
+    @apply text-sm font-semibold uppercase tracking-[0.14em];
+    font-family: var(--font-body);
+    color: var(--color-muted);
   }
 }

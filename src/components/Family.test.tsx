@@ -1,21 +1,20 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Family } from './Family';
-import { familyMoments } from '../data/content';
+import { familyProse } from '../data/content';
 
 describe('Family', () => {
-  it('renders each family moment title and description', () => {
+  it('renders every family paragraph', () => {
     render(<Family />);
-    familyMoments.forEach((moment) => {
-      expect(screen.getByText(moment.title)).toBeInTheDocument();
-      expect(screen.getByText(moment.description)).toBeInTheDocument();
+    familyProse.forEach((paragraph) => {
+      expect(screen.getByText(paragraph)).toBeInTheDocument();
     });
   });
 
-  it('renders each emoji', () => {
+  it('renders the section heading', () => {
     render(<Family />);
-    familyMoments.forEach((moment) => {
-      expect(screen.getByText(moment.emoji)).toBeInTheDocument();
-    });
+    expect(
+      screen.getByRole('heading', { name: /Life outside the terminal/ }),
+    ).toBeInTheDocument();
   });
 });

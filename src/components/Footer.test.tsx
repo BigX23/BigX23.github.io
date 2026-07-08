@@ -1,18 +1,25 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Footer } from './Footer';
-import { profile } from '../data/content';
+import { profile, signoff } from '../data/content';
 
 describe('Footer', () => {
-  it('renders the provided year and name', () => {
+  it('closes like a letter with the signoff', () => {
     render(<Footer year={2026} />);
-    expect(screen.getByText(/© 2026/)).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(profile.name))).toBeInTheDocument();
+    expect(screen.getByText(signoff.closing)).toBeInTheDocument();
+    expect(screen.getByText(`— ${signoff.name}`)).toBeInTheDocument();
   });
 
-  it('links to the profile email', () => {
+  it('renders the provided year in the byline', () => {
     render(<Footer year={2026} />);
-    const link = screen.getByRole('link', { name: profile.email });
+    expect(
+      screen.getByText(`${profile.name} · ${profile.location} · 2026`),
+    ).toBeInTheDocument();
+  });
+
+  it('renders a postscript mail link', () => {
+    render(<Footer year={2026} />);
+    const link = screen.getByRole('link', { name: new RegExp(profile.email) });
     expect(link).toHaveAttribute('href', `mailto:${profile.email}`);
   });
 });
