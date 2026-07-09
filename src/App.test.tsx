@@ -23,7 +23,7 @@ describe('App', () => {
     render(<App />);
     const year = new Date().getFullYear();
     expect(
-      screen.getByText(`${profile.name} · ${profile.location} · ${year}`),
+      screen.getByText(`${profile.name} · ${year}`),
     ).toBeInTheDocument();
   });
 });

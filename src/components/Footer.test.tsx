@@ -13,7 +13,7 @@ describe('Footer', () => {
   it('renders the provided year in the byline', () => {
     render(<Footer year={2026} />);
     expect(
-      screen.getByText(`${profile.name} · ${profile.location} · 2026`),
+      screen.getByText(`${profile.name} · 2026`),
     ).toBeInTheDocument();
   });
 

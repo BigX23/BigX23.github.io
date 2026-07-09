@@ -17,7 +17,6 @@ export interface BlogPost {
 export const profile = {
   name: 'Matthew White',
   role: 'Sr. Systems Development Engineer @ Google Cloud',
-  location: 'Silicon Valley, California',
   email: 'whitemat@gmail.com',
   salutation: 'Hello —',
 } as const;

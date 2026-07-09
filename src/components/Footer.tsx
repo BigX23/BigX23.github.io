@@ -17,7 +17,7 @@ export function Footer({ year }: FooterProps) {
         <p>{signoff.closing}</p>
         <p className="mt-4 font-display text-3xl font-semibold text-ink">— {signoff.name}</p>
         <p className="mt-2 text-base text-muted">
-          {profile.name} · {profile.location} · {year}
+          {profile.name} · {year}
         </p>
         <p className="mt-10 text-base text-muted">
           {signoff.postscript}{' '}

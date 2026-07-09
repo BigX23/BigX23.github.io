@@ -7,9 +7,6 @@ export function Hero() {
   return (
     <section id="top" className="pt-24 pb-36">
       <div className="measure">
-        <p className="small-caps-head mb-10">
-          From {profile.location}
-        </p>
         <h1 className="font-display text-4xl font-semibold text-ink">
           {profile.salutation}
         </h1>

@@ -11,9 +11,9 @@ describe('Hero', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders the dateline with the location', () => {
+  it('has no location dateline', () => {
     render(<Hero />);
-    expect(screen.getByText(`From ${profile.location}`)).toBeInTheDocument();
+    expect(screen.queryByText(/^From /)).not.toBeInTheDocument();
   });
 
   it('renders every opening paragraph', () => {
