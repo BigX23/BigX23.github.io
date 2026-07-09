@@ -73,6 +73,14 @@
     color: var(--color-focus);
   }
 
+  /* Frosted sticky nav — translucency derived from the paper token; blur is
+     purposeful here (the bar overlays scrolling content). */
+  .nav-frost {
+    background-color: color-mix(in oklab, var(--color-paper) 82%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
   .small-caps-head {
     @apply text-sm font-semibold uppercase tracking-[0.14em];
     font-family: var(--font-body);

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Navbar } from './Navbar';
-import { profile } from '../data/content';
+import { github, linkedin, navLinks, profile } from '../data/content';
 
 describe('Navbar', () => {
   it('renders the wordmark linking to the top of the page', () => {
@@ -10,16 +10,27 @@ describe('Navbar', () => {
     expect(wordmark).toHaveAttribute('href', '#top');
   });
 
-  it('renders a single mail action and no link row', () => {
+  it('renders every section link', () => {
     render(<Navbar />);
-    const links = screen.getAllByRole('link');
-    expect(links).toHaveLength(2); // wordmark + say hello, nothing else
-    const hello = screen.getByRole('link', { name: /say hello/i });
-    expect(hello).toHaveAttribute('href', `mailto:${profile.email}`);
+    navLinks.forEach((link) => {
+      expect(screen.getByRole('link', { name: link.label })).toHaveAttribute('href', link.href);
+    });
   });
 
-  it('has no menu button — a letter needs no menu', () => {
+  it('links the GitHub icon to the GitHub profile', () => {
     render(<Navbar />);
-    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', github.url);
+  });
+
+  it('links the LinkedIn icon to the LinkedIn profile', () => {
+    render(<Navbar />);
+    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', linkedin.url);
+  });
+
+  it('is a frosted sticky bar', () => {
+    const { container } = render(<Navbar />);
+    const header = container.querySelector('header');
+    expect(header?.className).toContain('sticky');
+    expect(header?.className).toContain('nav-frost');
   });
 });

@@ -27,6 +27,23 @@ export const github = {
   url: 'https://github.com/BigX23',
 } as const;
 
+export const linkedin = {
+  label: 'LinkedIn',
+  url: 'https://www.linkedin.com/in/matt-white-2376636/',
+} as const;
+
+export interface NavLink {
+  href: string;
+  label: string;
+}
+
+export const navLinks: NavLink[] = [
+  { href: '#about', label: 'About' },
+  { href: '#work', label: 'Work' },
+  { href: '#family', label: 'Family' },
+  { href: '#blog', label: 'Blog' },
+];
+
 export const letterOpening: string[] = [
   'I’m Matt. I’m a systems engineer in Silicon Valley, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
   'By day that means distributed systems, automation, and observability: the quiet disciplines that let a team ship quickly and still sleep through the night. By evening it means a house with three kids in it, a kitchen that smells like Sunday pancakes, and a driveway hoop that sees daily use.',
