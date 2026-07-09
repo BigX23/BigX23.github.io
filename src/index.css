@@ -13,6 +13,7 @@
     /* Warm-paper palette · anchor hue 80 (oat), accent hue 155 (fir green) */
     --color-paper: oklch(96% 0.012 80);
     --color-paper-2: oklch(93% 0.014 80);
+    --color-card: oklch(98.5% 0.008 80);
     --color-rule: oklch(82% 0.01 80);
     --color-neutral: oklch(56% 0.01 80);
     --color-muted: oklch(45% 0.012 75);
@@ -80,6 +81,16 @@
     background-color: color-mix(in oklab, var(--color-paper) 82%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Thin-bordered project card (from the studied reference) — shadow lifts on
+     hover; only the shadow transitions, never transition-all. */
+  .project-card {
+    @apply rounded-lg border border-rule bg-card p-6 shadow-sm;
+    transition: box-shadow 150ms ease-out;
+  }
+  .project-card:hover {
+    @apply shadow-md;
   }
 
   .small-caps-head {

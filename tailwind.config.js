@@ -6,6 +6,7 @@ export default {
       colors: {
         paper: 'var(--color-paper)',
         'paper-2': 'var(--color-paper-2)',
+        card: 'var(--color-card)',
         rule: 'var(--color-rule)',
         neutral: 'var(--color-neutral)',
         muted: 'var(--color-muted)',

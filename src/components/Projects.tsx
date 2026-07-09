@@ -5,9 +5,9 @@ export function Projects() {
   return (
     <Section id="projects" title="AI projects, deployed">
       <p>{aiProjectsIntro}</p>
-      <div className="mt-8 space-y-8">
+      <div className="mt-8 space-y-6">
         {aiProjects.map((project) => (
-          <article key={project.name}>
+          <article key={project.name} className="project-card">
             <h3 className="font-display text-xl font-semibold text-ink">
               <a href={project.url} className="letter-link no-underline hover:underline">
                 {project.name} →

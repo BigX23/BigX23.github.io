@@ -23,4 +23,10 @@ describe('Projects', () => {
       expect(screen.getByText(project.blurb)).toBeInTheDocument();
     });
   });
+
+  it('wraps each project in a thin-bordered card', () => {
+    const { container } = render(<Projects />);
+    const cards = container.querySelectorAll('article.project-card');
+    expect(cards).toHaveLength(aiProjects.length);
+  });
 });
