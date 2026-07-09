@@ -17,14 +17,19 @@ export interface BlogPost {
 export const profile = {
   name: 'Matthew White',
   role: 'Systems Engineer',
-  location: 'Seattle, Washington',
+  location: 'Silicon Valley, California',
   email: 'whitemat@gmail.com',
   salutation: 'Hello —',
 } as const;
 
+export const github = {
+  label: 'github.com/BigX23',
+  url: 'https://github.com/BigX23',
+} as const;
+
 export const letterOpening: string[] = [
-  'I’m Matt. I’m a systems engineer in Seattle, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
-  'By day that means distributed systems, automation, and observability: the quiet disciplines that let a team ship quickly and still sleep through the night. By evening it means a house full of kids, a kitchen that smells like Sunday pancakes, and a pair of hiking boots by the door.',
+  'I’m Matt. I’m a systems engineer in Silicon Valley, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
+  'By day that means distributed systems, automation, and observability: the quiet disciplines that let a team ship quickly and still sleep through the night. By evening it means a house with three kids in it, a kitchen that smells like Sunday pancakes, and a driveway hoop that sees daily use.',
   'This page is a letter, not a billboard. No dashboards, no sign-up buttons — just the work I care about, the people I love, and a few things I’ve written down along the way.',
 ];
 
@@ -65,8 +70,13 @@ export const projects: Project[] = [
   },
 ];
 
+export const tinkering: string[] = [
+  'Lately, most of my spare cycles go to AI. Building apps with AI has become my hobby of choice — small tools, experiments, and the occasional idea that refuses to stay small. Some of it works, all of it teaches me something, and the tinkering lives in the open on GitHub.',
+  'I try to stay current the honest way: tech conferences when I can get to one, and a steady diet of blogs, YouTube deep-dives, and Twitter threads in between. And when the laptop closes, there’s a good chance the NBA is on — basketball is the one system I follow purely for the joy of it.',
+];
+
 export const familyProse: string[] = [
-  'The systems I care about most run on love, not uptime. Most Saturdays you’ll find us on a Cascades trail, the kids setting the pace and choosing the snack breaks. Sunday mornings are for pancakes with whatever the crew decides belongs in the batter that week — results vary, enthusiasm doesn’t.',
+  'The systems I care about most run on love, not uptime. Most Saturdays you’ll find the five of us on a foothill trail, our three kids setting the pace and choosing the snack breaks. Sunday mornings are for pancakes with whatever the crew decides belongs in the batter that week — results vary, enthusiasm doesn’t.',
   'On clear nights we haul a small telescope into the backyard and practice patience together, chasing planets and the occasional meteor shower. It’s the slowest feedback loop I run, and my favorite one.',
 ];
 

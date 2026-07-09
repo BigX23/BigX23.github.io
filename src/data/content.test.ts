@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import {
   profile,
+  github,
   letterOpening,
   craft,
   skills,
   projects,
+  tinkering,
   familyProse,
   blogIntro,
   blogPosts,
@@ -44,6 +46,12 @@ describe('content data', () => {
     });
   });
 
+  it('links tinkering to the GitHub account', () => {
+    expect(tinkering.length).toBeGreaterThan(0);
+    expect(github.url).toBe('https://github.com/BigX23');
+    expect(github.label).toContain('BigX23');
+  });
+
   it('shares family life as prose paragraphs', () => {
     expect(familyProse.length).toBeGreaterThan(0);
     familyProse.forEach((paragraph) => {
@@ -69,7 +77,7 @@ describe('content data', () => {
   });
 
   it('uses typographic punctuation in rendered copy', () => {
-    const prose = [...letterOpening, ...craft, ...familyProse, blogIntro].join(' ');
+    const prose = [...letterOpening, ...craft, ...tinkering, ...familyProse, blogIntro].join(' ');
     expect(prose).not.toContain("'");
     expect(prose).not.toContain('...');
   });
