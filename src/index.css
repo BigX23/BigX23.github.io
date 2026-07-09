@@ -24,9 +24,10 @@
     --font-body: 'Newsreader', ui-serif, Georgia, serif;
   }
 
+  /* No scroll-behavior: smooth — it stalls anchor jumps in Chromium when the
+     root has overflow-x: clip, and the letter's motion stance is "none" anyway. */
   html {
     overflow-x: clip;
-    scroll-behavior: smooth;
   }
 
   body {
