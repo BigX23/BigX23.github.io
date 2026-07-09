@@ -5,7 +5,7 @@ import { letterOpening, profile } from '../data/content';
  */
 export function Hero() {
   return (
-    <section id="top" className="pt-16 pb-24">
+    <section id="top" className="pt-24 pb-36">
       <div className="measure">
         <p className="small-caps-head mb-10">
           From {profile.location}

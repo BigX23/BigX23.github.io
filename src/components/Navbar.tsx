@@ -7,7 +7,7 @@ import { profile } from '../data/content';
 export function Navbar() {
   return (
     <header className="border-b border-rule">
-      <nav className="mx-auto flex w-full max-w-4xl items-center justify-between px-6 py-5">
+      <nav className="mx-auto flex w-full max-w-4xl items-center justify-between px-6 py-6">
         <a href="#top" className="font-display text-lg font-semibold leading-none text-ink">
           {profile.name}
         </a>

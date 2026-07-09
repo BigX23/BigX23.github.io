@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { About } from './About';
-import { craft, skills } from '../data/content';
+import { craft } from '../data/content';
 
 describe('About', () => {
   it('renders every craft paragraph', () => {
@@ -11,11 +11,10 @@ describe('About', () => {
     });
   });
 
-  it('lists every skill as plain text without percentage bars', () => {
+  it('renders the section heading with no skill bars or lists', () => {
     render(<About />);
-    skills.forEach((skill) => {
-      expect(screen.getByText(skill)).toBeInTheDocument();
-    });
+    expect(screen.getByRole('heading', { name: /What I do/ })).toBeInTheDocument();
     expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
+    expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 });

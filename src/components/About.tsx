@@ -1,4 +1,4 @@
-import { craft, skills } from '../data/content';
+import { craft } from '../data/content';
 import { Section } from './Section';
 
 export function About() {
@@ -8,11 +8,6 @@ export function About() {
         {craft.map((paragraph) => (
           <p key={paragraph.slice(0, 24)}>{paragraph}</p>
         ))}
-        <ul className="space-y-1 border-l border-rule pl-5 text-muted">
-          {skills.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
       </div>
     </Section>
   );

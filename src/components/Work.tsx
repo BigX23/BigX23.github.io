@@ -9,7 +9,7 @@ export function Work() {
           <article key={project.title}>
             <h3 className="font-display text-2xl font-semibold text-ink">
               {project.title}
-              <span className="ml-3 font-body text-base font-normal text-neutral">
+              <span className="ml-3 font-body text-base font-normal text-muted">
                 {project.year}
               </span>
             </h3>

@@ -9,9 +9,9 @@ interface FooterProps {
  */
 export function Footer({ year }: FooterProps) {
   return (
-    <footer className="pb-20 pt-10">
+    <footer className="pb-28 pt-14">
       <div className="measure">
-        <p aria-hidden="true" className="mb-12 text-center tracking-[0.6em] text-neutral">
+        <p aria-hidden="true" className="mb-16 text-center tracking-[0.6em] text-neutral">
           * * *
         </p>
         <p>{signoff.closing}</p>

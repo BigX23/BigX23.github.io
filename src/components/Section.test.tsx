@@ -39,6 +39,6 @@ describe('Section', () => {
         <p>x</p>
       </Section>,
     );
-    expect(container.querySelector('section')?.className).toContain('pt-20');
+    expect(container.querySelector('section')?.className).toContain('pt-32');
   });
 });

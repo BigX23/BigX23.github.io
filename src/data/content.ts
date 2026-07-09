@@ -38,14 +38,6 @@ export const craft: string[] = [
   'The tools I reach for most, in roughly the order I trust them: distributed systems design, Kubernetes and containers, infrastructure as code, observability and SRE practice, and Go or Python when it’s time to write things down.',
 ];
 
-export const skills: string[] = [
-  'Distributed systems',
-  'Kubernetes & containers',
-  'Infrastructure as code',
-  'Observability & SRE',
-  'Go & Python',
-];
-
 export const projects: Project[] = [
   {
     title: 'Zero-Downtime Migration Platform',

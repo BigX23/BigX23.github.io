@@ -14,8 +14,8 @@
     --color-paper: oklch(96% 0.012 80);
     --color-paper-2: oklch(93% 0.014 80);
     --color-rule: oklch(82% 0.01 80);
-    --color-neutral: oklch(52% 0.01 80);
-    --color-muted: oklch(42% 0.012 75);
+    --color-neutral: oklch(56% 0.01 80);
+    --color-muted: oklch(45% 0.012 75);
     --color-ink: oklch(22% 0.012 60);
     --color-accent: oklch(42% 0.11 155);
     --color-focus: oklch(52% 0.13 155);
@@ -35,7 +35,7 @@
     color: var(--color-ink);
     font-family: var(--font-body);
     font-size: 1.125rem;
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 

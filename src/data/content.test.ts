@@ -4,7 +4,6 @@ import {
   github,
   letterOpening,
   craft,
-  skills,
   projects,
   tinkering,
   familyProse,
@@ -28,11 +27,10 @@ describe('content data', () => {
     });
   });
 
-  it('describes the craft and lists skills without invented percentages', () => {
+  it('describes the craft without invented percentages', () => {
     expect(craft.length).toBeGreaterThan(0);
-    expect(skills.length).toBeGreaterThan(0);
-    skills.forEach((skill) => {
-      expect(skill).not.toMatch(/\d+\s*%/);
+    craft.forEach((paragraph) => {
+      expect(paragraph).not.toMatch(/\d+\s*%/);
     });
   });
 
