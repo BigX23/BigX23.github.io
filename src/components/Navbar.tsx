@@ -51,21 +51,21 @@ export function Navbar() {
             <a
               href={github.url}
               aria-label="GitHub"
-              className="p-1 text-muted transition-colors hover:text-ink"
+              className="flex h-7 w-7 items-center justify-center text-muted transition-colors hover:text-ink"
             >
               <GitHubIcon />
             </a>
             <a
               href={linkedin.url}
               aria-label="LinkedIn"
-              className="p-1 text-muted transition-colors hover:text-ink"
+              className="flex h-7 w-7 items-center justify-center text-muted transition-colors hover:text-ink"
             >
               <LinkedInIcon />
             </a>
             <a
               href={chess.url}
               aria-label="Chess.com"
-              className="p-1 text-muted transition-colors hover:text-ink"
+              className="flex h-7 w-7 items-center justify-center text-muted transition-colors hover:text-ink"
             >
               <ChessPawnIcon />
             </a>

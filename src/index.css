@@ -96,7 +96,7 @@
   /* Chess.com pawn (user-supplied PNG) recolored via mask — the silhouette is
      painted with currentColor so it matches the other icons and their hover. */
   .chess-pawn-mask {
-    display: inline-block;
+    display: block;
     height: 1.25rem;
     width: 0.85rem;
     background-color: currentColor;
