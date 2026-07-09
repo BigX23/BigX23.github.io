@@ -9,11 +9,9 @@ function GitHubIcon() {
 }
 
 function ChessPawnIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-5 w-5">
-      <path d="M12 2.75a3.25 3.25 0 0 0-1.24 6.26c-.18 2.04-.8 3.76-1.86 5.24h6.2c-1.06-1.48-1.68-3.2-1.86-5.24A3.25 3.25 0 0 0 12 2.75ZM7.25 15.75c-.6 0-1.11.4-1.27.97l-.54 2.03h13.12l-.54-2.03a1.31 1.31 0 0 0-1.27-.97ZM4.75 20.25h14.5V22H4.75Z" />
-    </svg>
-  );
+  // The chess.com pawn shape from a user-supplied PNG, recolored to the site's
+  // ink via CSS mask (see .chess-pawn-mask).
+  return <span aria-hidden="true" className="chess-pawn-mask" />;
 }
 
 function LinkedInIcon() {

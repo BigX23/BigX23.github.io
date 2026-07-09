@@ -93,6 +93,17 @@
     @apply shadow-md;
   }
 
+  /* Chess.com pawn (user-supplied PNG) recolored via mask — the silhouette is
+     painted with currentColor so it matches the other icons and their hover. */
+  .chess-pawn-mask {
+    display: inline-block;
+    height: 1.25rem;
+    width: 0.85rem;
+    background-color: currentColor;
+    mask: url('/chess-pawn.png') no-repeat center / contain;
+    -webkit-mask: url('/chess-pawn.png') no-repeat center / contain;
+  }
+
   .small-caps-head {
     @apply text-sm font-semibold uppercase tracking-[0.14em];
     font-family: var(--font-body);
