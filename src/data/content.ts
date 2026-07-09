@@ -16,7 +16,7 @@ export interface BlogPost {
 
 export const profile = {
   name: 'Matthew White',
-  role: 'Systems Engineer',
+  role: 'Sr. Systems Development Engineer @ Google Cloud',
   location: 'Silicon Valley, California',
   email: 'whitemat@gmail.com',
   salutation: 'Hello —',
@@ -30,6 +30,11 @@ export const github = {
 export const linkedin = {
   label: 'LinkedIn',
   url: 'https://www.linkedin.com/in/matt-white-2376636/',
+} as const;
+
+export const chess = {
+  label: 'Chess.com',
+  url: 'https://www.chess.com/member/BigX23',
 } as const;
 
 export interface NavLink {
@@ -71,7 +76,7 @@ export const aiProjects: AiProject[] = [
 ];
 
 export const letterOpening: string[] = [
-  'I’m Matt. I’m a systems engineer in Silicon Valley, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
+  'I’m Matt. I’m a Sr. Systems Development Engineer at Google Cloud, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
   'By day that means distributed systems, automation, and observability: the quiet disciplines that let a team ship quickly and still sleep through the night. By evening it means a house with three kids in it, a kitchen that smells like Sunday pancakes, and a driveway hoop that sees daily use.',
   'This page is a letter, not a billboard. No dashboards, no sign-up buttons — just the work I care about, the people I love, and a few things I’ve written down along the way.',
 ];

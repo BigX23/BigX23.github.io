@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Navbar } from './Navbar';
-import { github, linkedin, navLinks, profile } from '../data/content';
+import { chess, github, linkedin, navLinks, profile } from '../data/content';
 
 describe('Navbar', () => {
   it('renders the wordmark linking to the top of the page', () => {
@@ -25,6 +25,11 @@ describe('Navbar', () => {
   it('links the LinkedIn icon to the LinkedIn profile', () => {
     render(<Navbar />);
     expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', linkedin.url);
+  });
+
+  it('links the chess pawn icon to the Chess.com profile', () => {
+    render(<Navbar />);
+    expect(screen.getByRole('link', { name: 'Chess.com' })).toHaveAttribute('href', chess.url);
   });
 
   it('is a frosted sticky bar', () => {

@@ -15,7 +15,7 @@ import {
 describe('content data', () => {
   it('exposes a complete profile', () => {
     expect(profile.name).toBe('Matthew White');
-    expect(profile.role).toBe('Systems Engineer');
+    expect(profile.role).toBe('Sr. Systems Development Engineer @ Google Cloud');
     expect(profile.email).toContain('@');
     expect(profile.salutation.length).toBeGreaterThan(0);
   });
