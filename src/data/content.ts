@@ -40,8 +40,34 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
+  { href: '#projects', label: 'Projects' },
   { href: '#family', label: 'Family' },
   { href: '#blog', label: 'Blog' },
+];
+
+export interface AiProject {
+  name: string;
+  url: string;
+  blurb: string;
+}
+
+export const aiProjectsIntro =
+  'A few of the AI experiments that made it past my laptop:';
+
+// Add deployed AI projects here — name, link, one honest line.
+export const aiProjects: AiProject[] = [
+  {
+    name: 'This website',
+    url: 'https://github.com/BigX23/BigX23.github.io',
+    blurb:
+      'The letter you’re reading — written as a single page, built with AI, tested to 100% coverage, and deployed on GitHub Pages.',
+  },
+  {
+    name: 'My AI Employee',
+    url: 'https://github.com/BigX23/my_ai_employee',
+    blurb:
+      'An always-on OpenClaw assistant running on a small cloud VM — my experiment in giving an AI a desk of its own.',
+  },
 ];
 
 export const letterOpening: string[] = [
