@@ -9,9 +9,13 @@ export function Projects() {
         {aiProjects.map((project) => (
           <article key={project.name} className="project-card">
             <h3 className="font-display text-xl font-semibold text-ink">
-              <a href={project.url} className="letter-link no-underline hover:underline">
-                {project.name} →
-              </a>
+              {project.url ? (
+                <a href={project.url} className="letter-link no-underline hover:underline">
+                  {project.name} →
+                </a>
+              ) : (
+                project.name
+              )}
             </h3>
             <p className="mt-2 text-base">{project.blurb}</p>
           </article>

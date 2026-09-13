@@ -8,7 +8,7 @@ describe('Work', () => {
     render(<Work />);
     projects.forEach((project) => {
       expect(screen.getByText(project.title)).toBeInTheDocument();
-      expect(screen.getByText(project.year)).toBeInTheDocument();
+      expect(screen.getAllByText(project.year).length).toBeGreaterThan(0);
       expect(screen.getByText(project.story)).toBeInTheDocument();
     });
   });

@@ -5,20 +5,11 @@ export interface Project {
   stack: string[];
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  date: string; // ISO 8601
-  readingMinutes: number;
-  excerpt: string;
-  tags: string[];
-}
-
 export const profile = {
   name: 'Matthew White',
   role: 'Sr. Systems Development Engineer @ Google Cloud',
   email: 'whitemat@gmail.com',
-  salutation: 'Hello —',
+  salutation: 'Hi, I’m Matt.',
 } as const;
 
 export const github = {
@@ -46,114 +37,109 @@ export const navLinks: NavLink[] = [
   { href: '#work', label: 'Work' },
   { href: '#projects', label: 'Projects' },
   { href: '#family', label: 'Family' },
-  { href: '#blog', label: 'Blog' },
 ];
 
 export interface AiProject {
   name: string;
-  url: string;
+  url: string | null;
   blurb: string;
 }
 
 export const aiProjectsIntro =
-  'A few of the AI experiments that made it past my laptop:';
+  'Side projects, all built with AI. Some are live, some are experiments — every one of them exists to solve a real problem:';
 
-// Add deployed AI projects here — name, link, one honest line.
 export const aiProjects: AiProject[] = [
+  {
+    name: 'Pleasanton PlayMatch',
+    url: 'https://aiplaymatch.com',
+    blurb:
+      'A tennis and pickleball partner-matching app for the Pleasanton community — player profiles, weighted matchmaking, and a real-time AI coach named Rally. Live at aiplaymatch.com, entirely self-hosted, and in real use.',
+  },
+  {
+    name: 'Kalshi Bot',
+    url: null,
+    blurb:
+      'An automated trading bot for Kalshi prediction markets — an event-driven trading coordinator with paper and live modes, running on its own VPS.',
+  },
+  {
+    name: 'Home Crowd',
+    url: null,
+    blurb:
+      'A watch-party app for sports fans: pick a live NBA, NFL, MLB, or NHL game and join a virtual room with other fans, so watching from your couch still feels like company. In progress.',
+  },
+  {
+    name: 'Whisper',
+    url: null,
+    blurb:
+      'A privacy-first messaging app with end-to-end encryption — messages are encrypted on the client and readable only by sender and recipient, with a time-to-live that makes read messages disappear.',
+  },
+  {
+    name: 'SWE Team',
+    url: null,
+    blurb:
+      'A browser-based console where a squad of AI agents — a project-manager agent orchestrating specialists — builds, documents, and deploys software. An experiment in what a dev team looks like when the developers are agents.',
+  },
+  {
+    name: 'My AI Employee',
+    url: null,
+    blurb:
+      'An always-on OpenClaw assistant running on a small cloud VM — my experiment in giving an AI a desk of its own.',
+  },
   {
     name: 'This website',
     url: 'https://github.com/BigX23/BigX23.github.io',
     blurb:
-      'The letter you’re reading — written as a single page, built with AI, tested to 100% coverage, and deployed on GitHub Pages.',
-  },
-  {
-    name: 'My AI Employee',
-    url: 'https://github.com/BigX23/my_ai_employee',
-    blurb:
-      'An always-on OpenClaw assistant running on a small cloud VM — my experiment in giving an AI a desk of its own.',
+      'The page you’re reading — a single page, built with AI, tested to full coverage, and deployed on GitHub Pages.',
   },
 ];
 
 export const letterOpening: string[] = [
-  'I’m Matt. I’m a Sr. Systems Development Engineer at Google Cloud, and I build the kind of infrastructure nobody notices until it stops working. That invisibility is the point — the best week my systems can have is one where no one has to think about them at all.',
-  'By day that means distributed systems, automation, and observability: the quiet disciplines that let a team ship quickly and still sleep through the night. By evening it means a house with three kids in it, a kitchen that smells like Sunday pancakes, and a driveway hoop that sees daily use.',
-  'This page is a letter, not a billboard. No dashboards, no sign-up buttons — just the work I care about, the people I love, and a few things I’ve written down along the way.',
+  'I’m a Sr. Systems Development Engineer at Google Cloud, where I work on the health of Google’s TPU fleets — the machines behind AI training and serving. I build the observability and automated-repair systems that keep them running.',
+  'I’ve been building infrastructure for more than fifteen years: over a decade deep in the VMware world, including architecting one of the largest private VMware clouds in the US, and years of consulting before that. These days I’m also a tech lead — mentoring engineers and running projects on systems worth billions of dollars.',
+  'What ties all of it together: I love solving real problems by building software. That goes for the day job and for the steady stream of side projects further down this page.',
 ];
 
 export const craft: string[] = [
-  'I gravitate toward the unglamorous middle of the stack — the part between “the code compiled” and “the customer noticed nothing.” Good infrastructure, to me, is less about clever architecture and more about honest failure modes: systems that degrade politely, tell you what’s wrong in plain language, and recover without ceremony.',
-  'The tools I reach for most, in roughly the order I trust them: distributed systems design, Kubernetes and containers, infrastructure as code, observability and SRE practice, and Go or Python when it’s time to write things down.',
+  'At Google I own fleet health for TPUs: monitoring the machines, and repairing them with automated repair systems I built. I also run our repro lab — where failed systems are sent back to us, put through a battery of diagnostics, and root-caused with cross-functional partners across hardware, firmware, manufacturing, storage, and environmental factors. The learnings from those investigations get engineered back into the fleet, so the same failure doesn’t happen twice. Along the way I built a log-collection tool that gathers diagnostics from servers and switches across the fleet.',
+  'Before Google, I architected, built, deployed, and ran one of the largest private VMware clouds in the US at SS&C (2017 – 2022) — along with the zero-touch provisioning that grew it. Before and alongside that, I spent years as an IT consultant (2013 – 2019) integrating NetApp, VMware, Microsoft, and Juniper gear into customer datacenters.',
+  'The tools I reach for most: Kubernetes, Terraform, observability and SRE practice, and Go or Python when it’s time to write things down. And lately, AI is everywhere in my workflow — Claude Code, Gemini, Antigravity, Cursor, and Codex.',
 ];
 
 export const projects: Project[] = [
   {
-    title: 'Zero-Downtime Migration Platform',
-    year: '2025',
+    title: 'TPU Fleet Health & Automated Repair',
+    year: '2023 – present',
     story:
-      'We moved a long-lived monolith onto a service mesh without ever turning the lights off — phased cutovers, blue-green rollouts, and a great deal of patient rehearsal before each step.',
-    stack: ['Kubernetes', 'Istio', 'Terraform', 'Go'],
+      'Observability and automated repair for Google’s TPU fleets, plus the repro lab where failed machines are diagnosed, root-caused with hardware, firmware, and manufacturing teams, and turned into fixes that ship back to the fleet.',
+    stack: ['Go', 'Python', 'Observability', 'Automation'],
   },
   {
-    title: 'Fleet Observability Pipeline',
-    year: '2024',
+    title: 'Private VMware Cloud at SS&C',
+    year: '2017 – 2022',
     story:
-      'A metrics-and-tracing pipeline that turned “something feels slow” into an answerable question, and detection from a war-room ritual into a routine glance.',
-    stack: ['OpenTelemetry', 'Prometheus', 'Grafana', 'Python'],
+      'Architected, built, deployed, and maintained one of the largest private VMware clouds in the United States — from initial design through daily operations.',
+    stack: ['VMware vSphere', 'ESXi', 'vCenter', 'NetApp'],
   },
   {
-    title: 'Self-Healing Autoscaler',
-    year: '2023',
+    title: 'Zero-Touch Server Provisioning',
+    year: '2017 – 2022',
     story:
-      'An autoscaler that learns the shape of seasonal load and gets ahead of it, so capacity arrives before the traffic does — kinder to the pager and to the cloud bill alike.',
-    stack: ['Go', 'KEDA', 'AWS'],
+      'An automated pipeline that took new hosts from racked-and-stacked to production — software and firmware updates, ESXi install, and vCenter cluster join — without a human touching a console.',
+    stack: ['VMware ESXi', 'vCenter', 'Automation'],
   },
 ];
 
 export const tinkering: string[] = [
-  'Lately, most of my spare cycles go to AI. Building apps with AI has become my hobby of choice — small tools, experiments, and the occasional idea that refuses to stay small. Some of it works, all of it teaches me something, and the tinkering lives in the open on GitHub.',
-  'I try to stay current the honest way: tech conferences when I can get to one, and a steady diet of blogs, YouTube deep-dives, and Twitter threads in between. And when the laptop closes, there’s a good chance the NBA is on — basketball is the one system I follow purely for the joy of it.',
+  'Most of my spare cycles go to AI. Building apps with AI has become my hobby of choice — small tools, experiments, and the occasional idea that refuses to stay small. Some of it works, all of it teaches me something, and the best of it ships.',
 ];
 
 export const familyProse: string[] = [
-  'The systems I care about most run on love, not uptime. Most Saturdays you’ll find the five of us on a foothill trail, our three kids setting the pace and choosing the snack breaks. Sunday mornings are for pancakes with whatever the crew decides belongs in the batter that week — results vary, enthusiasm doesn’t.',
-  'On clear nights we haul a small telescope into the backyard and practice patience together, chasing planets and the occasional meteor shower. It’s the slowest feedback loop I run, and my favorite one.',
-];
-
-export const blogIntro =
-  'Some things I’ve written lately, if you’d like to read further:';
-
-export const blogPosts: BlogPost[] = [
-  {
-    slug: 'observability-that-earns-its-keep',
-    title: 'Observability That Earns Its Keep',
-    date: '2026-05-18',
-    readingMinutes: 7,
-    excerpt:
-      'Dashboards are cheap; insight is not. How to instrument systems so the signal you need is there before the incident starts.',
-    tags: ['SRE', 'Observability'],
-  },
-  {
-    slug: 'the-quiet-art-of-graceful-degradation',
-    title: 'The Quiet Art of Graceful Degradation',
-    date: '2026-03-02',
-    readingMinutes: 6,
-    excerpt:
-      'Resilience is less about never failing and more about failing in ways your users barely notice. A field guide.',
-    tags: ['Reliability', 'Architecture'],
-  },
-  {
-    slug: 'infrastructure-as-code-without-the-sprawl',
-    title: 'Infrastructure as Code Without the Sprawl',
-    date: '2026-01-11',
-    readingMinutes: 8,
-    excerpt:
-      'Terraform modules multiply fast. Patterns I use to keep a large codebase legible, testable, and safe to change.',
-    tags: ['IaC', 'Terraform'],
-  },
+  'Home is a busy house with three kids, which means our weekends run on their schedule: basketball games, soccer matches, flag football, and dance competitions — often more than one in a day.',
+  'When the calendar lets up, I play tennis and chess, and there’s usually a game on — I follow the NBA (go Spurs) and enjoy soccer too. Mostly we like staying active and making the most of the Bay Area weather.',
 ];
 
 export const signoff = {
-  closing: 'Yours, from the trailhead,',
+  closing: 'Thanks for reading,',
   name: 'Matt',
   postscript: 'p.s. — the inbox is always open:',
 } as const;

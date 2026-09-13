@@ -7,8 +7,7 @@ import {
   projects,
   tinkering,
   familyProse,
-  blogIntro,
-  blogPosts,
+  aiProjects,
   signoff,
 } from './content';
 
@@ -57,25 +56,30 @@ describe('content data', () => {
     });
   });
 
-  it('provides blog posts with unique slugs and ISO dates', () => {
-    expect(blogIntro.length).toBeGreaterThan(0);
-    expect(blogPosts.length).toBeGreaterThan(0);
-    const slugs = new Set(blogPosts.map((post) => post.slug));
-    expect(slugs.size).toBe(blogPosts.length);
-    blogPosts.forEach((post) => {
-      expect(post.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      expect(post.tags.length).toBeGreaterThan(0);
+  it('gives every side project a name and an honest blurb', () => {
+    expect(aiProjects.length).toBeGreaterThan(0);
+    const names = new Set(aiProjects.map((project) => project.name));
+    expect(names.size).toBe(aiProjects.length);
+    aiProjects.forEach((project) => {
+      expect(project.name.length).toBeGreaterThan(0);
+      expect(project.blurb.length).toBeGreaterThan(40);
     });
   });
 
-  it('closes the letter with a signoff and postscript', () => {
+  it('closes with a signoff and postscript', () => {
     expect(signoff.closing.length).toBeGreaterThan(0);
     expect(signoff.name).toBe('Matt');
     expect(signoff.postscript).toContain('p.s.');
   });
 
   it('uses typographic punctuation in rendered copy', () => {
-    const prose = [...letterOpening, ...craft, ...tinkering, ...familyProse, blogIntro].join(' ');
+    const prose = [
+      ...letterOpening,
+      ...craft,
+      ...tinkering,
+      ...familyProse,
+      ...aiProjects.map((project) => project.blurb),
+    ].join(' ');
     expect(prose).not.toContain("'");
     expect(prose).not.toContain('...');
   });

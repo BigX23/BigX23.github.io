@@ -5,7 +5,6 @@ import { Work } from './components/Work';
 import { Tinkering } from './components/Tinkering';
 import { Projects } from './components/Projects';
 import { Family } from './components/Family';
-import { Blog } from './components/Blog';
 import { Footer } from './components/Footer';
 
 export function App() {
@@ -21,7 +20,6 @@ export function App() {
         <Tinkering />
         <Projects />
         <Family />
-        <Blog />
       </main>
       <Footer year={year} />
     </div>

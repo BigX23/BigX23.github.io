@@ -9,11 +9,16 @@ describe('Projects', () => {
     expect(screen.getByText(aiProjectsIntro)).toBeInTheDocument();
   });
 
-  it('links each project to its URL', () => {
+  it('links each project with a URL, and renders the rest as plain titles', () => {
     render(<Projects />);
     aiProjects.forEach((project) => {
-      const link = screen.getByRole('link', { name: new RegExp(project.name) });
-      expect(link).toHaveAttribute('href', project.url);
+      if (project.url) {
+        const link = screen.getByRole('link', { name: new RegExp(project.name) });
+        expect(link).toHaveAttribute('href', project.url);
+      } else {
+        const title = screen.getByText(project.name);
+        expect(title.closest('a')).toBeNull();
+      }
     });
   });
 

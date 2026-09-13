@@ -4,9 +4,9 @@ import { App } from './App';
 import { profile } from './data/content';
 
 describe('App', () => {
-  it('renders all six content sections in letter order', () => {
+  it('renders all five content sections in order', () => {
     const { container } = render(<App />);
-    const ids = ['about', 'work', 'tinkering', 'projects', 'family', 'blog'];
+    const ids = ['about', 'work', 'tinkering', 'projects', 'family'];
     ids.forEach((id) => {
       expect(container.querySelector(`#${id}`)).not.toBeNull();
     });
